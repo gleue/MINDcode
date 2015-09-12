@@ -16,10 +16,6 @@
 		1FE49C2916A3CD060016E8F6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49C2716A3CD060016E8F6 /* Credits.rtf */; };
 		1FE49C2C16A3CD060016E8F6 /* NXCSourceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49C2B16A3CD060016E8F6 /* NXCSourceDocument.m */; };
 		1FE49C3216A3CD060016E8F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49C3016A3CD060016E8F6 /* MainMenu.xib */; };
-		1FE49C3A16A3CD060016E8F6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49C3916A3CD060016E8F6 /* SenTestingKit.framework */; };
-		1FE49C3B16A3CD060016E8F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49C1816A3CD060016E8F6 /* Cocoa.framework */; };
-		1FE49C4316A3CD060016E8F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49C4116A3CD060016E8F6 /* InfoPlist.strings */; };
-		1FE49C4616A3CD060016E8F6 /* MINDcodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49C4516A3CD060016E8F6 /* MINDcodeTests.m */; };
 		1FE49C5516A3CF260016E8F6 /* ACEView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49C5416A3CF260016E8F6 /* ACEView.framework */; };
 		1FE49C5716A3CFCB0016E8F6 /* ACEView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE49C5416A3CF260016E8F6 /* ACEView.framework */; };
 		1FE49C5B16A3D0F90016E8F6 /* ACEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49C5916A3D0F90016E8F6 /* ACEViewController.m */; };
@@ -95,12 +91,6 @@
 		1FE49C2A16A3CD060016E8F6 /* NXCSourceDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXCSourceDocument.h; sourceTree = "<group>"; };
 		1FE49C2B16A3CD060016E8F6 /* NXCSourceDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXCSourceDocument.m; sourceTree = "<group>"; };
 		1FE49C3116A3CD060016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1FE49C3816A3CD060016E8F6 /* MINDcodeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MINDcodeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FE49C3916A3CD060016E8F6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		1FE49C4016A3CD060016E8F6 /* MINDcodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MINDcodeTests-Info.plist"; sourceTree = "<group>"; };
-		1FE49C4216A3CD060016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1FE49C4416A3CD060016E8F6 /* MINDcodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MINDcodeTests.h; sourceTree = "<group>"; };
-		1FE49C4516A3CD060016E8F6 /* MINDcodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MINDcodeTests.m; sourceTree = "<group>"; };
 		1FE49C5416A3CF260016E8F6 /* ACEView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ACEView.framework; sourceTree = "<group>"; };
 		1FE49C5816A3D0F90016E8F6 /* ACEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEViewController.h; sourceTree = "<group>"; };
 		1FE49C5916A3D0F90016E8F6 /* ACEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEViewController.m; sourceTree = "<group>"; };
@@ -154,15 +144,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FE49C3416A3CD060016E8F6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FE49C3A16A3CD060016E8F6 /* SenTestingKit.framework in Frameworks */,
-				1FE49C3B16A3CD060016E8F6 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -181,7 +162,6 @@
 				3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */,
 				1F612D0616A91D680017C5E0 /* icon.iconset */,
 				1FE49C1E16A3CD060016E8F6 /* MINDcode */,
-				1FE49C3E16A3CD060016E8F6 /* MINDcodeTests */,
 				1FE49C1716A3CD060016E8F6 /* Frameworks */,
 				1FE49CB816A498490016E8F6 /* bin */,
 				1FE49C1516A3CD060016E8F6 /* Products */,
@@ -192,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				1FE49C1416A3CD060016E8F6 /* MINDcode.app */,
-				1FE49C3816A3CD060016E8F6 /* MINDcodeTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,7 +183,6 @@
 				1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */,
 				1FE49C5416A3CF260016E8F6 /* ACEView.framework */,
 				1FE49C1816A3CD060016E8F6 /* Cocoa.framework */,
-				1FE49C3916A3CD060016E8F6 /* SenTestingKit.framework */,
 				1FE49C1A16A3CD060016E8F6 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -255,25 +233,6 @@
 				1FE49C2616A3CD060016E8F6 /* MINDcode-Prefix.pch */,
 				1FE49C2716A3CD060016E8F6 /* Credits.rtf */,
 				1FE49CFD16A4EC730016E8F6 /* Localizable.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1FE49C3E16A3CD060016E8F6 /* MINDcodeTests */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49C4416A3CD060016E8F6 /* MINDcodeTests.h */,
-				1FE49C4516A3CD060016E8F6 /* MINDcodeTests.m */,
-				1FE49C3F16A3CD060016E8F6 /* Supporting Files */,
-			);
-			path = MINDcodeTests;
-			sourceTree = "<group>";
-		};
-		1FE49C3F16A3CD060016E8F6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49C4016A3CD060016E8F6 /* MINDcodeTests-Info.plist */,
-				1FE49C4116A3CD060016E8F6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -394,25 +353,6 @@
 			productReference = 1FE49C1416A3CD060016E8F6 /* MINDcode.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FE49C3716A3CD060016E8F6 /* MINDcodeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1FE49C4C16A3CD060016E8F6 /* Build configuration list for PBXNativeTarget "MINDcodeTests" */;
-			buildPhases = (
-				1FE49C3316A3CD060016E8F6 /* Sources */,
-				1FE49C3416A3CD060016E8F6 /* Frameworks */,
-				1FE49C3516A3CD060016E8F6 /* Resources */,
-				1FE49C3616A3CD060016E8F6 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1FE49C3D16A3CD060016E8F6 /* PBXTargetDependency */,
-			);
-			name = MINDcodeTests;
-			productName = MINDcodeTests;
-			productReference = 1FE49C3816A3CD060016E8F6 /* MINDcodeTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -442,7 +382,6 @@
 			projectRoot = "";
 			targets = (
 				1FE49C1316A3CD060016E8F6 /* MINDcode */,
-				1FE49C3716A3CD060016E8F6 /* MINDcodeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -474,31 +413,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FE49C3516A3CD060016E8F6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FE49C4316A3CD060016E8F6 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1FE49C3616A3CD060016E8F6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FE49C1016A3CD060016E8F6 /* Sources */ = {
@@ -520,23 +435,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FE49C3316A3CD060016E8F6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FE49C4616A3CD060016E8F6 /* MINDcodeTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1FE49C3D16A3CD060016E8F6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FE49C1316A3CD060016E8F6 /* MINDcode */;
-			targetProxy = 1FE49C3C16A3CD060016E8F6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1FE49C2116A3CD060016E8F6 /* InfoPlist.strings */ = {
@@ -561,14 +460,6 @@
 				1FE49C3116A3CD060016E8F6 /* en */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		1FE49C4116A3CD060016E8F6 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FE49C4216A3CD060016E8F6 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		1FE49C5F16A3D1030016E8F6 /* ACEViewController.xib */ = {
@@ -699,36 +590,6 @@
 			};
 			name = Release;
 		};
-		1FE49C4D16A3CD060016E8F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MINDcode.app/Contents/MacOS/MINDcode";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MINDcode/MINDcode-Prefix.pch";
-				INFOPLIST_FILE = "MINDcodeTests/MINDcodeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		1FE49C4E16A3CD060016E8F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MINDcode.app/Contents/MacOS/MINDcode";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MINDcode/MINDcode-Prefix.pch";
-				INFOPLIST_FILE = "MINDcodeTests/MINDcodeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -746,15 +607,6 @@
 			buildConfigurations = (
 				1FE49C4A16A3CD060016E8F6 /* Debug */,
 				1FE49C4B16A3CD060016E8F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1FE49C4C16A3CD060016E8F6 /* Build configuration list for PBXNativeTarget "MINDcodeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FE49C4D16A3CD060016E8F6 /* Debug */,
-				1FE49C4E16A3CD060016E8F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
