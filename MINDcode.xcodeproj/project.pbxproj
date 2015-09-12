@@ -25,7 +25,6 @@
 		1FE49C6E16A3D9FB0016E8F6 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49C7016A3D9FB0016E8F6 /* MainWindowController.xib */; };
 		1FE49C7C16A489960016E8F6 /* SourceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49C7A16A489960016E8F6 /* SourceDocument.m */; };
 		1FE49CB916A499FE0016E8F6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49CBB16A499FE0016E8F6 /* MainViewController.xib */; };
-		1FE49CCB16A49AA40016E8F6 /* nbc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE49CC216A49A8B0016E8F6 /* nbc */; };
 		1FE49CCF16A4B1740016E8F6 /* SourceCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CCE16A4B1740016E8F6 /* SourceCompiler.m */; };
 		1FE49CD216A4B2930016E8F6 /* NXCSourceCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CD116A4B2930016E8F6 /* NXCSourceCompiler.m */; };
 		1FE49CE416A4CB920016E8F6 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */; };
@@ -36,6 +35,8 @@
 		1FE49D1E16A60AF60016E8F6 /* Fantom.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE49D1C16A60AA00016E8F6 /* Fantom.framework */; };
 		1FE49D1F16A60B2F0016E8F6 /* ProgressWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49D2116A60B2F0016E8F6 /* ProgressWindowController.xib */; };
 		3D89D67C1BA3809900D2E49E /* NXTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89D67B1BA3808200D2E49E /* NXTKit.framework */; };
+		3D89D6A41BA385B100D2E49E /* nbc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D89D6911BA3858C00D2E49E /* nbc */; };
+		3D89D6A51BA385B100D2E49E /* nxtcom in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D89D6961BA3858C00D2E49E /* nxtcom */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				1FE49CCB16A49AA40016E8F6 /* nbc in CopyFiles */,
+				3D89D6A41BA385B100D2E49E /* nbc in CopyFiles */,
+				3D89D6A51BA385B100D2E49E /* nxtcom in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,16 +105,6 @@
 		1FE49C7916A489960016E8F6 /* SourceDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceDocument.h; sourceTree = "<group>"; };
 		1FE49C7A16A489960016E8F6 /* SourceDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceDocument.m; sourceTree = "<group>"; };
 		1FE49CBA16A499FE0016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
-		1FE49CBE16A49A8B0016E8F6 /* Changelog */ = {isa = PBXFileReference; lastKnownFileType = text; path = Changelog; sourceTree = "<group>"; };
-		1FE49CBF16A49A8B0016E8F6 /* nbc.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = nbc.1; sourceTree = "<group>"; };
-		1FE49CC016A49A8B0016E8F6 /* Readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
-		1FE49CC216A49A8B0016E8F6 /* nbc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = nbc; sourceTree = "<group>"; };
-		1FE49CC416A49A8B0016E8F6 /* NBC Compile And Download via USB.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "NBC Compile And Download via USB.app"; sourceTree = "<group>"; };
-		1FE49CC516A49A8B0016E8F6 /* NBCCompile.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = NBCCompile.app; sourceTree = "<group>"; };
-		1FE49CC616A49A8B0016E8F6 /* NXT Download via USB.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "NXT Download via USB.app"; sourceTree = "<group>"; };
-		1FE49CC716A49A8B0016E8F6 /* nxtcom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = nxtcom; sourceTree = "<group>"; };
-		1FE49CC816A49A8B0016E8F6 /* readme_nxtcom.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme_nxtcom.txt; sourceTree = "<group>"; };
-		1FE49CCA16A49A8B0016E8F6 /* struct.nxc */ = {isa = PBXFileReference; lastKnownFileType = text; path = struct.nxc; sourceTree = "<group>"; };
 		1FE49CCD16A4B1740016E8F6 /* SourceCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCompiler.h; sourceTree = "<group>"; };
 		1FE49CCE16A4B1740016E8F6 /* SourceCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCompiler.m; sourceTree = "<group>"; };
 		1FE49CD016A4B2930016E8F6 /* NXCSourceCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXCSourceCompiler.h; sourceTree = "<group>"; };
@@ -130,6 +122,16 @@
 		1FE49D2016A60B2F0016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProgressWindowController.xib; sourceTree = "<group>"; };
 		1FF20AB516A738450012F460 /* SourceCompiler+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SourceCompiler+Protected.h"; sourceTree = "<group>"; };
 		3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NXTKit.xcodeproj; path = NXTKit/NXTKit.xcodeproj; sourceTree = "<group>"; };
+		3D89D68D1BA3858C00D2E49E /* Changelog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog; sourceTree = "<group>"; };
+		3D89D68E1BA3858C00D2E49E /* nbc.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = nbc.1; sourceTree = "<group>"; };
+		3D89D68F1BA3858C00D2E49E /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
+		3D89D6911BA3858C00D2E49E /* nbc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = nbc; sourceTree = "<group>"; };
+		3D89D6931BA3858C00D2E49E /* NBC Compile And Download via USB.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "NBC Compile And Download via USB.app"; sourceTree = "<group>"; };
+		3D89D6941BA3858C00D2E49E /* NBCCompile.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = NBCCompile.app; sourceTree = "<group>"; };
+		3D89D6951BA3858C00D2E49E /* NXT Download via USB.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "NXT Download via USB.app"; sourceTree = "<group>"; };
+		3D89D6961BA3858C00D2E49E /* nxtcom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = nxtcom; sourceTree = "<group>"; };
+		3D89D6971BA3858C00D2E49E /* readme_nxtcom.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme_nxtcom.txt; sourceTree = "<group>"; };
+		3D89D6991BA3858C00D2E49E /* struct.nxc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = struct.nxc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */,
+				3D89D68A1BA3858C00D2E49E /* bin */,
 				1F612D0616A91D680017C5E0 /* icon.iconset */,
 				1FE49C1E16A3CD060016E8F6 /* MINDcode */,
 				1FE49C1716A3CD060016E8F6 /* Frameworks */,
-				1FE49CB816A498490016E8F6 /* bin */,
 				1FE49C1516A3CD060016E8F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -179,22 +181,14 @@
 		1FE49C1716A3CD060016E8F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F70B9DB16A782CD009DCA94 /* LegoMindstorms */,
+				1FE49C1B16A3CD060016E8F6 /* AppKit.framework */,
+				1FE49C1D16A3CD060016E8F6 /* Foundation.framework */,
 				1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */,
 				1FE49C5416A3CF260016E8F6 /* ACEView.framework */,
 				1FE49C1816A3CD060016E8F6 /* Cocoa.framework */,
-				1FE49C1A16A3CD060016E8F6 /* Other Frameworks */,
+				1F70B9DB16A782CD009DCA94 /* LegoMindstorms */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1FE49C1A16A3CD060016E8F6 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49C1B16A3CD060016E8F6 /* AppKit.framework */,
-				1FE49C1D16A3CD060016E8F6 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		1FE49C1E16A3CD060016E8F6 /* MINDcode */ = {
@@ -260,65 +254,6 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
-		1FE49CB816A498490016E8F6 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49CBC16A49A8B0016E8F6 /* nbc-1.2.1.r4.osx */,
-			);
-			name = bin;
-			path = MINDcode;
-			sourceTree = "<group>";
-		};
-		1FE49CBC16A49A8B0016E8F6 /* nbc-1.2.1.r4.osx */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49CBD16A49A8B0016E8F6 /* doc */,
-				1FE49CC116A49A8B0016E8F6 /* NXT */,
-				1FE49CC916A49A8B0016E8F6 /* tests */,
-			);
-			name = "nbc-1.2.1.r4.osx";
-			path = "bin/nbc-1.2.1.r4.osx";
-			sourceTree = SOURCE_ROOT;
-		};
-		1FE49CBD16A49A8B0016E8F6 /* doc */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49CBE16A49A8B0016E8F6 /* Changelog */,
-				1FE49CBF16A49A8B0016E8F6 /* nbc.1 */,
-				1FE49CC016A49A8B0016E8F6 /* Readme */,
-			);
-			path = doc;
-			sourceTree = "<group>";
-		};
-		1FE49CC116A49A8B0016E8F6 /* NXT */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49CC216A49A8B0016E8F6 /* nbc */,
-				1FE49CC316A49A8B0016E8F6 /* nxtcom_scripts */,
-			);
-			path = NXT;
-			sourceTree = "<group>";
-		};
-		1FE49CC316A49A8B0016E8F6 /* nxtcom_scripts */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49CC416A49A8B0016E8F6 /* NBC Compile And Download via USB.app */,
-				1FE49CC516A49A8B0016E8F6 /* NBCCompile.app */,
-				1FE49CC616A49A8B0016E8F6 /* NXT Download via USB.app */,
-				1FE49CC716A49A8B0016E8F6 /* nxtcom */,
-				1FE49CC816A49A8B0016E8F6 /* readme_nxtcom.txt */,
-			);
-			path = nxtcom_scripts;
-			sourceTree = "<group>";
-		};
-		1FE49CC916A49A8B0016E8F6 /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				1FE49CCA16A49A8B0016E8F6 /* struct.nxc */,
-			);
-			path = tests;
-			sourceTree = "<group>";
-		};
 		1FE49CCC16A4B1550016E8F6 /* Compilers */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +264,71 @@
 				1FE49CD116A4B2930016E8F6 /* NXCSourceCompiler.m */,
 			);
 			name = Compilers;
+			sourceTree = "<group>";
+		};
+		3D89D6771BA3808100D2E49E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D67B1BA3808200D2E49E /* NXTKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D89D68A1BA3858C00D2E49E /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D68B1BA3858C00D2E49E /* nbc-1.2.1.r4.osx */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		3D89D68B1BA3858C00D2E49E /* nbc-1.2.1.r4.osx */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D68C1BA3858C00D2E49E /* doc */,
+				3D89D6901BA3858C00D2E49E /* NXT */,
+				3D89D6981BA3858C00D2E49E /* tests */,
+			);
+			path = "nbc-1.2.1.r4.osx";
+			sourceTree = "<group>";
+		};
+		3D89D68C1BA3858C00D2E49E /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D68D1BA3858C00D2E49E /* Changelog */,
+				3D89D68E1BA3858C00D2E49E /* nbc.1 */,
+				3D89D68F1BA3858C00D2E49E /* Readme */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		3D89D6901BA3858C00D2E49E /* NXT */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D6911BA3858C00D2E49E /* nbc */,
+				3D89D6921BA3858C00D2E49E /* nxtcom_scripts */,
+			);
+			path = NXT;
+			sourceTree = "<group>";
+		};
+		3D89D6921BA3858C00D2E49E /* nxtcom_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D6931BA3858C00D2E49E /* NBC Compile And Download via USB.app */,
+				3D89D6941BA3858C00D2E49E /* NBCCompile.app */,
+				3D89D6951BA3858C00D2E49E /* NXT Download via USB.app */,
+				3D89D6961BA3858C00D2E49E /* nxtcom */,
+				3D89D6971BA3858C00D2E49E /* readme_nxtcom.txt */,
+			);
+			path = nxtcom_scripts;
+			sourceTree = "<group>";
+		};
+		3D89D6981BA3858C00D2E49E /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				3D89D6991BA3858C00D2E49E /* struct.nxc */,
+			);
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
