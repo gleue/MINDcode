@@ -32,8 +32,6 @@
 		1FE49CCB16A49AA40016E8F6 /* nbc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE49CC216A49A8B0016E8F6 /* nbc */; };
 		1FE49CCF16A4B1740016E8F6 /* SourceCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CCE16A4B1740016E8F6 /* SourceCompiler.m */; };
 		1FE49CD216A4B2930016E8F6 /* NXCSourceCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CD116A4B2930016E8F6 /* NXCSourceCompiler.m */; };
-		1FE49CD816A4CACC0016E8F6 /* NXTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49CD716A4CACC0016E8F6 /* NXTKit.framework */; };
-		1FE49CD916A4CAD40016E8F6 /* NXTKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE49CD716A4CACC0016E8F6 /* NXTKit.framework */; };
 		1FE49CE416A4CB920016E8F6 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */; };
 		1FE49CE716A4CE170016E8F6 /* NXTDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CE616A4CE170016E8F6 /* NXTDeviceManager.m */; };
 		1FE49CFB16A4EC730016E8F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49CFD16A4EC730016E8F6 /* Localizable.strings */; };
@@ -41,15 +39,16 @@
 		1FE49D0816A507140016E8F6 /* UploadProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49D0716A507140016E8F6 /* UploadProgressWindowController.m */; };
 		1FE49D1E16A60AF60016E8F6 /* Fantom.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE49D1C16A60AA00016E8F6 /* Fantom.framework */; };
 		1FE49D1F16A60B2F0016E8F6 /* ProgressWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49D2116A60B2F0016E8F6 /* ProgressWindowController.xib */; };
+		3D89D67C1BA3809900D2E49E /* NXTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89D67B1BA3808200D2E49E /* NXTKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1FE49C3C16A3CD060016E8F6 /* PBXContainerItemProxy */ = {
+		3D89D67A1BA3808200D2E49E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1FE49C0B16A3CD060016E8F6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FE49C1316A3CD060016E8F6;
-			remoteInfo = MINDcode;
+			containerPortal = 3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = NXTKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,7 +61,6 @@
 			files = (
 				1FE49C5716A3CFCB0016E8F6 /* ACEView.framework in CopyFiles */,
 				1F70B9DC16A782F7009DCA94 /* VISA.framework in CopyFiles */,
-				1FE49CD916A4CAD40016E8F6 /* NXTKit.framework in CopyFiles */,
 				1FE49D1E16A60AF60016E8F6 /* Fantom.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +127,6 @@
 		1FE49CCE16A4B1740016E8F6 /* SourceCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCompiler.m; sourceTree = "<group>"; };
 		1FE49CD016A4B2930016E8F6 /* NXCSourceCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXCSourceCompiler.h; sourceTree = "<group>"; };
 		1FE49CD116A4B2930016E8F6 /* NXCSourceCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXCSourceCompiler.m; sourceTree = "<group>"; };
-		1FE49CD716A4CACC0016E8F6 /* NXTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NXTKit.framework; sourceTree = "<group>"; };
 		1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
 		1FE49CE516A4CE170016E8F6 /* NXTDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTDeviceManager.h; sourceTree = "<group>"; };
 		1FE49CE616A4CE170016E8F6 /* NXTDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTDeviceManager.m; sourceTree = "<group>"; };
@@ -142,6 +139,7 @@
 		1FE49D1C16A60AA00016E8F6 /* Fantom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fantom.framework; sourceTree = "<group>"; };
 		1FE49D2016A60B2F0016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProgressWindowController.xib; sourceTree = "<group>"; };
 		1FF20AB516A738450012F460 /* SourceCompiler+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SourceCompiler+Protected.h"; sourceTree = "<group>"; };
+		3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NXTKit.xcodeproj; path = NXTKit/NXTKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +147,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D89D67C1BA3809900D2E49E /* NXTKit.framework in Frameworks */,
 				1FE49CE416A4CB920016E8F6 /* IOBluetoothUI.framework in Frameworks */,
 				1FE49C1916A3CD060016E8F6 /* Cocoa.framework in Frameworks */,
 				1FE49C5516A3CF260016E8F6 /* ACEView.framework in Frameworks */,
-				1FE49CD816A4CACC0016E8F6 /* NXTKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +178,7 @@
 		1FE49C0916A3CD060016E8F6 = {
 			isa = PBXGroup;
 			children = (
+				3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */,
 				1F612D0616A91D680017C5E0 /* icon.iconset */,
 				1FE49C1E16A3CD060016E8F6 /* MINDcode */,
 				1FE49C3E16A3CD060016E8F6 /* MINDcodeTests */,
@@ -203,7 +202,6 @@
 			children = (
 				1F70B9DB16A782CD009DCA94 /* LegoMindstorms */,
 				1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */,
-				1FE49CD716A4CACC0016E8F6 /* NXTKit.framework */,
 				1FE49C5416A3CF260016E8F6 /* ACEView.framework */,
 				1FE49C1816A3CD060016E8F6 /* Cocoa.framework */,
 				1FE49C3916A3CD060016E8F6 /* SenTestingKit.framework */,
@@ -421,6 +419,7 @@
 		1FE49C0B16A3CD060016E8F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0640;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Jeff Sawatzky";
 			};
@@ -434,6 +433,12 @@
 			mainGroup = 1FE49C0916A3CD060016E8F6;
 			productRefGroup = 1FE49C1516A3CD060016E8F6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3D89D6771BA3808100D2E49E /* Products */;
+					ProjectRef = 3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1FE49C1316A3CD060016E8F6 /* MINDcode */,
@@ -441,6 +446,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3D89D67B1BA3808200D2E49E /* NXTKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NXTKit.framework;
+			remoteRef = 3D89D67A1BA3808200D2E49E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1FE49C1216A3CD060016E8F6 /* Resources */ = {
@@ -658,7 +673,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)\"/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MINDcode/MINDcode-Prefix.pch";
@@ -674,7 +689,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)\"/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MINDcode/MINDcode-Prefix.pch";

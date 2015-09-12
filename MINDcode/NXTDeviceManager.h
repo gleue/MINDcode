@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <NXTKit/NXTKit.h>
 
 extern NSString *const kNXTDeviceManagerDidOpenDeviceNotification;
 extern NSString *const kNXTDeviceManagerDidFailToOpenDeviceNotification;
