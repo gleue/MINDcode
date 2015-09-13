@@ -37,6 +37,7 @@
 		3D89D67C1BA3809900D2E49E /* NXTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89D67B1BA3808200D2E49E /* NXTKit.framework */; };
 		3D89D6A41BA385B100D2E49E /* nbc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D89D6911BA3858C00D2E49E /* nbc */; };
 		3D89D6A51BA385B100D2E49E /* nxtcom in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D89D6961BA3858C00D2E49E /* nxtcom */; };
+		3DC48A2E1BA5738C0039639F /* NXTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC48A2D1BA5738C0039639F /* NXTDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,8 @@
 		3D89D6961BA3858C00D2E49E /* nxtcom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = nxtcom; sourceTree = "<group>"; };
 		3D89D6971BA3858C00D2E49E /* readme_nxtcom.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme_nxtcom.txt; sourceTree = "<group>"; };
 		3D89D6991BA3858C00D2E49E /* struct.nxc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = struct.nxc; sourceTree = "<group>"; };
+		3DC48A2C1BA5738C0039639F /* NXTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTDevice.h; sourceTree = "<group>"; };
+		3DC48A2D1BA5738C0039639F /* NXTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTDevice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				1FE49C8016A48CA40016E8F6 /* UI */,
 				1FE49C7F16A48C640016E8F6 /* Documents */,
 				1FE49D1A16A5FF640016E8F6 /* NXT.h */,
+				3DC48A2C1BA5738C0039639F /* NXTDevice.h */,
+				3DC48A2D1BA5738C0039639F /* NXTDevice.m */,
 				1FE49CE516A4CE170016E8F6 /* NXTDeviceManager.h */,
 				1FE49CE616A4CE170016E8F6 /* NXTDeviceManager.m */,
 				1FE49C6916A3D9E90016E8F6 /* MainWindowController.h */,
@@ -424,6 +429,7 @@
 				1FE49C2C16A3CD060016E8F6 /* NXCSourceDocument.m in Sources */,
 				1FE49C5B16A3D0F90016E8F6 /* ACEViewController.m in Sources */,
 				1FE49C6316A3D2E10016E8F6 /* MainViewController.m in Sources */,
+				3DC48A2E1BA5738C0039639F /* NXTDevice.m in Sources */,
 				1FE49C6C16A3D9E90016E8F6 /* MainWindowController.m in Sources */,
 				1FE49C7C16A489960016E8F6 /* SourceDocument.m in Sources */,
 				1FE49CCF16A4B1740016E8F6 /* SourceCompiler.m in Sources */,

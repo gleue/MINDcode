@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <NXTKit/NXTKit.h>
 
+#import "NXTDevice.h"
+
 extern NSString *const kNXTDeviceManagerDidOpenDeviceNotification;
 extern NSString *const kNXTDeviceManagerDidFailToOpenDeviceNotification;
 extern NSString *const kNXTDeviceManagerDidCloseDeviceNotification;
@@ -16,10 +18,10 @@ extern NSString *const kNXTDeviceManagerDidCloseDeviceNotification;
 
 @interface NXTDeviceManager : NSObject <MRDeviceDelegate>
 
-@property (nonatomic, strong, readonly) MRNXTDevice *device;
+@property (nonatomic, strong, readonly) NXTDevice *device;
 
-- (BOOL) isConnected;
-- (void) connect;
+- (BOOL)isConnected;
+- (void)connect;
 
 + (NXTDeviceManager *) defaultManager;
 

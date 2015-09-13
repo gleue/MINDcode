@@ -33,43 +33,67 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    
+
+    self.progressIndictor.indeterminate = YES;
     self.promptTextField.stringValue =
     [NSString stringWithFormat:NSLocalizedString(@"CompileProgressWindowControllerMessageFormat", nil)];
     
     [self performSelector:@selector(prepareForCompile) withObject:self afterDelay:0];
 }
 
-- (void) prepareForCompile {
+- (void)prepareForCompile {
     [self compile];
 }
 
-- (void) compile {
-    self.result = [self.compiler compile];
-    self.destinationURL = nil;
-    if (self.result) {
-        self.destinationURL = self.compiler.destinationURL;
-    }
+- (void)compile {
+
+    [self.progressIndictor startAnimation:nil];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ (void) {
+        self.result = [self.compiler compile];
+        self.destinationURL = nil;
+        if (self.result) {
+            self.destinationURL = self.compiler.destinationURL;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^ (void) {
+            
+            [self.progressIndictor stopAnimation:nil];
+            [self dismissSheet];
+        });
+    });
+}
+
+- (void)cancel {
     
-    [self dismissSheet];
+    [self.progressIndictor stopAnimation:nil];
+
+    [self.compiler kill];
+    self.result = NO;
+    
+    [super cancel];
 }
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     
     [super didEndSheet:sheet returnCode:returnCode contextInfo:contextInfo];
+
+    if (returnCode == NSModalResponseCancel) {
+        
+        [self.delegate compileProgressWindowControllerDidCancel:self];
+
+    } else {
     
-    if (self.delegate) {
         [self.delegate compileProgressWindowController:self didFinishCompilingFile:self.destinationURL withSuccess:self.result];
     }
 }
 
 #pragma mark Source Compiler Delegate
 
-- (void) sourceCompiler:(SourceCompiler *)sourceCompiler didReceiveOutput:(NSString *)output {
-    if (self.delegate) {
+- (void)sourceCompiler:(SourceCompiler *)sourceCompiler didReceiveOutput:(NSString *)output {
+
+    dispatch_async(dispatch_get_main_queue(), ^ (void) {
         [self.delegate compileProgressWindowController:self didReceiveOutput:output];
-    }
+    });
 }
 
 @end

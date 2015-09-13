@@ -13,45 +13,48 @@ NSString *const kNXTDeviceManagerDidFailToOpenDeviceNotification = @"kNXTDeviceM
 NSString *const kNXTDeviceManagerDidCloseDeviceNotification = @"kNXTDeviceManagerDidCloseDeviceNotification";
 
 
-static NXTDeviceManager *gInstance = NULL;
-
-
 @interface NXTDeviceManager()
 
-@property (nonatomic, strong) MRNXTDevice *device;
+@property (nonatomic, strong) NXTDevice *device;
 
 @end
 
-
 @implementation NXTDeviceManager
 
-+ (void)initialize
-{
-    static BOOL initialized = NO;
-    if(!initialized) {
-        initialized = YES;
-        gInstance = [[NXTDeviceManager alloc] init];
++ (NXTDeviceManager *)defaultManager {
+
+    static NXTDeviceManager *theInstance = nil;
+    static dispatch_once_t onceToken;
+
+    dispatch_once(&onceToken, ^{
+
+        theInstance = [[NXTDeviceManager alloc] init];
+    });
+
+    return theInstance;
+}
+
+- (instancetype)init {
+
+    self = [super init];
+    
+    if (self) {
+        
+        self.device = nil;
     }
+    
+    return self;
 }
 
-+ (NXTDeviceManager *) defaultManager {
-    return gInstance;
+- (BOOL)isConnected {
+
+    return (self.device != nil);
 }
 
-- (BOOL) isConnected {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+- (void)connect {
     
     if (self.device) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
 
-- (void) connect {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    if (self.device) {
         [self.device close];
         self.device = nil;
     }
@@ -63,6 +66,7 @@ static NXTDeviceManager *gInstance = NULL;
     
     // If we found some, then use the first one by default
 	if ([usbDevices count]) {
+        
         // Take the first device. Perhaps in the future we may want to provide a way to select different ones
 		MRUSBDeviceEntry *entry = [usbDevices objectAtIndex:0];
 		
@@ -73,11 +77,14 @@ static NXTDeviceManager *gInstance = NULL;
 																		  direction:MRUSBTransferDirectionOut], nil];
 		
 		transport = [[MRUSBDeviceTransport alloc] initWithDeviceEntry:entry desiredPipes:pipes];
+        
 	} else {
+        
 		IOBluetoothDeviceSelectorController *bluetoothDeviceSelectorController = [IOBluetoothDeviceSelectorController deviceSelector];
         int result = [bluetoothDeviceSelectorController runModal];
         
         if (result == kIOBluetoothUISuccess) {
+            
             NSArray *results = [bluetoothDeviceSelectorController getResults];
             
             if ([results count]) {
@@ -86,18 +93,22 @@ static NXTDeviceManager *gInstance = NULL;
             } else {
                 [[NSNotificationCenter defaultCenter] postNotificationName:kNXTDeviceManagerDidCloseDeviceNotification object:self];
             }
+            
         } else {
+            
             [[NSNotificationCenter defaultCenter] postNotificationName:kNXTDeviceManagerDidCloseDeviceNotification object:self];
         }
 	}
     
     if (transport) {
+
         NSError *error = nil;
         
-        self.device = [[MRNXTDevice alloc] initWithTransport:transport];
-        [self.device setDelegate:self];
+        self.device = [[NXTDevice alloc] initWithTransport:transport];
+        self.device.delegate = self;
         
         if (![self.device open:&error]) {
+
             [self.device close];
             self.device = nil;
         }
@@ -107,19 +118,19 @@ static NXTDeviceManager *gInstance = NULL;
 #pragma mark Device Delegate
 
 - (void)deviceDidOpen:(MRDevice *)aDevice {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNXTDeviceManagerDidOpenDeviceNotification object:self];
 }
 
 - (void)device:(MRDevice *)aDevice didFailToOpen:(NSError *)error {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    [self.device close];
+    self.device = nil;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNXTDeviceManagerDidFailToOpenDeviceNotification object:self userInfo:@{@"error":error}];
 }
 
 - (void)deviceDidClose:(MRDevice *)aDevice {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     
     [self.device close];
     self.device = nil;

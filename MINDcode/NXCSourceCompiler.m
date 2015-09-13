@@ -11,17 +11,18 @@
 
 @interface NXCSourceCompiler()
 
+@property (nonatomic, weak) NSTask *compileTask;
+
 @end
 
 
 @implementation NXCSourceCompiler
 
-- (BOOL) compile {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+- (BOOL)compile {
     
     if ([super compile]) {
         //do actual compile
-        NSURL *nbcExecutableURL = [[[[NSBundle mainBundle] executableURL] URLByDeletingLastPathComponent] URLByAppendingPathComponent:@"nbc"];
+        NSURL *nbcExecutableURL = [[NSBundle mainBundle] URLForAuxiliaryExecutable:@"nbc"];
         NSURL *frameworksURL = [[NSBundle mainBundle] privateFrameworksURL];
         
         NSURL *inputFileURL = [self.sourceDocument fileURL];
@@ -36,10 +37,12 @@
         [task setStandardOutput:pipe];
         [task setStandardError:pipe];
         
+        self.compileTask = task;
+
         NSLog(@"running %@ with %@", nbcExecutableURL, args);
         NSLog(@"with env %@", task.environment);
         [task launch];
-        
+
         NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
         NSString *standardOutput = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         if (self.delegate) {
@@ -56,6 +59,11 @@
     } else {
         return NO;
     }
+}
+
+- (void) kill {
+    
+    [self.compileTask terminate];
 }
 
 @end

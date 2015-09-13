@@ -24,6 +24,7 @@
 
 @protocol CompileProgressWindowControllerDelegate
 
+- (void) compileProgressWindowControllerDidCancel:(CompileProgressWindowController *)controller;
 - (void) compileProgressWindowController:(CompileProgressWindowController *)controller didReceiveOutput:(NSString *)output;
 - (void) compileProgressWindowController:(CompileProgressWindowController *)controller didFinishCompilingFile:(NSURL *)destinationURL withSuccess:(BOOL)success;
 

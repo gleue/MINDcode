@@ -7,9 +7,16 @@
 */
 "UploadProgressWindowControllerMessageFormat" = "Uploading '%1@'...";
 "CompileProgressWindowControllerMessageFormat" = "Compiling...";
+
 "MainViewControllerCompiling" = "Compiling...\n";
+"MainViewControllerCompilingDone" = "Compiling OK\n";
 "MainViewControllerCompilingFailed" = "Compiling failed\n";
+"MainViewControllerCompilingCancelled" = "Compiling cancelled\n";
 "MainViewControllerUploading" = "Uploading...\n";
+"MainViewControllerUploadingDone" = "Uploading OK\n";
 "MainViewControllerUploadingFailed" = "Uploading failed\n";
 "MainViewControllerRunning" = "Running...\n";
 "MainViewControllerRunningFailed" = "Running failed\n";
+"MainViewControllerRunningStopped" = "Running stopped\n";
+
+"MainViewControllerUnknownDeviceName" = "Unknown device";

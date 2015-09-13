@@ -11,33 +11,44 @@
 #import "NXTDeviceManager.h"
 #import "UploadProgressWindowController.h"
 
+#import <NXTKit/NXTKit.h>
+
 @interface MainViewController()
 
-@property (nonatomic, strong) IBOutlet NSView * nxtInfoDisconnectedView;
-@property (nonatomic, strong) IBOutlet NSView * nxtInfoBoxConnectedView;
+@property (strong) IBOutlet NSView * nxtInfoDisconnectedView;
+@property (strong) IBOutlet NSView * nxtInfoBoxConnectedView;
+@property (strong) IBOutlet NSTextField *nxtInfoBoxDevicenameLabel;
+@property (strong) IBOutlet NSLevelIndicatorCell *nxtInfoBoxFreespaceIndicator;
 
-@property (nonatomic, unsafe_unretained) IBOutlet ACEViewController * aceViewController;
-@property (nonatomic, unsafe_unretained) IBOutlet NSView * aceView;
-@property (nonatomic, unsafe_unretained) IBOutlet NSProgressIndicator * compileProgressIndicator;
-@property (nonatomic, unsafe_unretained) IBOutlet NSProgressIndicator * connectProgessIndicator;
-@property (nonatomic, unsafe_unretained) IBOutlet NSBox * nxtInfoBoxView;
-@property (nonatomic, unsafe_unretained) IBOutlet NSTextView * outputTextView;
+@property (strong) IBOutlet ACEViewController * aceViewController;
+@property (strong) IBOutlet NSView * aceView;
+@property (strong) IBOutlet NSProgressIndicator * compileProgressIndicator;
+@property (strong) IBOutlet NSProgressIndicator * connectProgessIndicator;
+@property (strong) IBOutlet NSBox * nxtInfoBoxView;
+@property (strong) IBOutlet NSTextView * outputTextView;
 
-@property (nonatomic, strong) ProgressWindowController * currentProgressController;
-@property (nonatomic, assign) BOOL shouldUploadAfterCompile;
-@property (nonatomic, assign) BOOL shouldRunAfterUpload;
+@property (strong) ProgressWindowController * currentProgressController;
+@property (assign) BOOL shouldUploadAfterCompile;
+@property (assign) BOOL shouldRunAfterUpload;
 
 - (IBAction)compileWasClicked:(id)sender;
 - (IBAction)clearOutputWasClicked:(id)sender;
 - (IBAction)connectToNXTDeviceWasClicked:(id)sender;
 - (IBAction)uploadToNXTDeviceWasClicked:(id)sender;
 - (IBAction)runToNXTDeviceWasClicked:(id)sender;
+- (IBAction)stopProgramOnNXTDeviceWasClicked:(id)sender;
 
 @end
 
 @implementation MainViewController
 
+-(void)dealloc {
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)loadView {
+
     [super loadView];
     
     [self.compileProgressIndicator stopAnimation:self];
@@ -58,7 +69,13 @@
                                                  name:kNXTDeviceManagerDidCloseDeviceNotification
                                                object:[NXTDeviceManager defaultManager]];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(nxtDeviceDidChangeNotification:)
+                                                 name:kNXTDeviceDidChangeNotification
+                                               object:nil];
+
+    [self updateDeviceInfo];
+
     if ([[NXTDeviceManager defaultManager] isConnected]) {
         [self setCurrentNXTInfoBoxView:self.nxtInfoBoxConnectedView];
     } else {
@@ -114,10 +131,23 @@
     }
 }
 
-#pragma mark Compile Progress Window Controller Delegate
+#pragma mark - Compile Progress Window Controller Delegate
+
+- (void)compileProgressWindowControllerDidCancel:(CompileProgressWindowController *)controller {
+    
+    self.currentProgressController = nil;
+    [self.compileProgressIndicator stopAnimation:self];
+
+    self.shouldUploadAfterCompile = NO;
+
+    [self appendStringToOutputTextView:NSLocalizedString(@"MainViewControllerCompilingCancelled", nil)];
+}
 
 - (void)compileProgressWindowController:(CompileProgressWindowController *)controller didReceiveOutput:(NSString *)output {
-    [self appendStringToOutputTextView:output];
+    
+    if (self.currentProgressController) {
+        [self appendStringToOutputTextView:output];
+    }
 }
 
 - (void)compileProgressWindowController:(CompileProgressWindowController *)controller didFinishCompilingFile:(NSURL *)destinationURL withSuccess:(BOOL)success {
@@ -126,6 +156,7 @@
     [self.compileProgressIndicator stopAnimation:self];
     
     if (success) {
+        [self appendStringToOutputTextView:NSLocalizedString(@"MainViewControllerCompilingDone", nil)];
         if (self.shouldUploadAfterCompile) {
             self.shouldUploadAfterCompile = NO;
             
@@ -141,13 +172,14 @@
     }
 }
 
-#pragma mark Upload Progress Window Controller Delegate
+#pragma mark - Upload Progress Window Controller Delegate
 
-- (void) uploadProgressWindowController:(UploadProgressWindowController *)controller didFinishUploadingFile:(NSString *)fileName withSuccess:(BOOL)success {
+- (void)uploadProgressWindowController:(UploadProgressWindowController *)controller didFinishUploadingFile:(NSString *)fileName withSuccess:(BOOL)success {
     
     self.currentProgressController = nil;
     
     if (success) {
+        [self appendStringToOutputTextView:NSLocalizedString(@"MainViewControllerUploadingDone", nil)];
         if (self.shouldRunAfterUpload) {
             self.shouldRunAfterUpload = NO;
             
@@ -163,29 +195,44 @@
     }
 }
 
-#pragma NXT Device Manager Notifications
+#pragma mark - NXT Device Manager Notifications
 
-- (void) nxtDeviceManagerDidOpenDeviceNotification:(NSNotification *) notification {
+- (void)nxtDeviceManagerDidOpenDeviceNotification:(NSNotification *)notification {
+    
     [self.connectProgessIndicator stopAnimation:self];
     [self setCurrentNXTInfoBoxView:self.nxtInfoBoxConnectedView];
 }
 
-- (void) nxtDeviceManagerDidFailToOpenDeviceNotification:(NSNotification *) notification {
+- (void)nxtDeviceManagerDidFailToOpenDeviceNotification:(NSNotification *)notification {
+    
     [self.connectProgessIndicator stopAnimation:self];
     [self setCurrentNXTInfoBoxView:self.nxtInfoDisconnectedView];
     
-    NSError * error = [notification.userInfo objectForKey:@"error"];
+    NSError *error = [notification.userInfo objectForKey:@"error"];
+    
     if (error) {
         NSBeginAlertSheet(nil, nil, nil, nil, self.view.window, self, NULL, NULL, nil, @"%@", error.description);
     }
 }
 
-- (void) nxtDeviceManagerDidCloseDeviceNotification:(NSNotification *) notification {
+- (void)nxtDeviceManagerDidCloseDeviceNotification:(NSNotification *)notification {
+    
     [self.connectProgessIndicator stopAnimation:self];
     [self setCurrentNXTInfoBoxView:self.nxtInfoDisconnectedView];
+    
+    if (self.currentProgressController) {
+        [self.currentProgressController dismissSheet];
+    }
 }
 
-#pragma mark Actions
+#pragma mark - NXT Device Notifications
+
+- (void)nxtDeviceDidChangeNotification:(NSNotification *)notification {
+    
+    [self updateDeviceInfo];
+}
+
+#pragma mark - Actions
 
 - (IBAction)compileWasClicked:(id)sender {
     [self compileAndUpload:NO andRun:NO];
@@ -208,8 +255,33 @@
     [self compileAndUpload:YES andRun:YES];
 }
 
--(void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+- (IBAction)stopProgramOnNXTDeviceWasClicked:(id)sender {
+    
+    MRNXTStopProgramCommand * spc = [[MRNXTStopProgramCommand alloc] init];
+    
+    [[NXTDeviceManager defaultManager].device enqueueCommand:spc responseBlock:^ (id response) {
+        
+        [self appendStringToOutputTextView:NSLocalizedString(@"MainViewControllerRunningStopped", nil)];
+    }];
+}
+
+#pragma mark - Helpers
+
+- (void)updateDeviceInfo {
+
+    NXTDevice *device = [NXTDeviceManager defaultManager].device;
+    
+    if (device) {
+        
+        self.nxtInfoBoxDevicenameLabel.stringValue = device.deviceName;
+        self.nxtInfoBoxFreespaceIndicator.integerValue = device.freeSpace;
+        self.nxtInfoBoxFreespaceIndicator.enabled = YES;
+
+    } else {
+        
+        self.nxtInfoBoxDevicenameLabel.stringValue = NSLocalizedString(@"MainViewControllerUnknownDeviceName", nil);
+        self.nxtInfoBoxFreespaceIndicator.enabled = NO;
+    }
 }
 
 @end

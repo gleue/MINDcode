@@ -9,6 +9,8 @@
 #import "UploadProgressWindowController.h"
 #import "ProgressWindowController+Protected.h"
 
+#import <NXTKit/NXTKit.h>
+
 @interface UploadProgressWindowController ()
 
 @property (nonatomic, strong) MRNXTDevice *device;
@@ -50,6 +52,7 @@
 }
 
 - (void) prepareForUpload {
+    sleep(1);
     // First delelte the file if it exists
     MRNXTDeleteCommand *del = [[MRNXTDeleteCommand alloc] init];
     del.filename = self.fileName;
@@ -59,10 +62,11 @@
 }
 
 - (void)openWrite {
-	
+    sleep(1);
+
     // Now open a write operation
 	MRNXTOpenWriteCommand *owc = [[MRNXTOpenWriteCommand alloc] init];
-	owc.size = [self.data length];
+	owc.size = (uint32_t)[self.data length];
 	owc.filename = self.fileName;
 	
 	[self.device enqueueCommand:owc responseBlock:^(MRNXTHandleResponse *resp) {
@@ -76,32 +80,32 @@
 
 - (void)enqueueWrites:(uint8_t)handle {
 	NSUInteger totalLength = [self.data length];
-	
-    __block BOOL breakLoop = NO;
     
 	for (uint16_t idx = 0; idx < totalLength; idx += WRITE_BLOCK_SIZE) {
 		NSUInteger bytesToWrite = MIN_INT(totalLength - idx, WRITE_BLOCK_SIZE);
-        
-		MRNXTWriteCommand *wr = [[MRNXTWriteCommand alloc] init];
+
+        MRNXTWriteCommand *wr = [[MRNXTWriteCommand alloc] init];
 		wr.handle = handle;
 		wr.data = [self.data subdataWithRange:NSMakeRange(idx, bytesToWrite)];
 		
 		[self.device enqueueCommand:wr responseBlock:^(MRNXTHandleSizeResponse *resp) {
             if (resp.status == NXTStatusSuccess) {
+
                 self.currIdx += resp.size;
                 [self.progressIndictor setDoubleValue:(self.currIdx / (float) totalLength)];
+                
+                if (self.currIdx == totalLength) {
+                    self.completed = YES;
+                    [self done:handle];
+                }
+
             } else {
-                breakLoop = YES;
+
+                self.completed = NO;
+                [self done:handle];
             }
 		}];
-        
-        if (breakLoop) {
-            break;
-        }
 	}
-	
-    self.completed = !breakLoop;
-	[self done:handle];
 }
 
 - (void)done:(uint8_t)handle {

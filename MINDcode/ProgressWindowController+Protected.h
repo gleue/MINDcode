@@ -13,7 +13,6 @@
 @property (nonatomic, unsafe_unretained) IBOutlet NSTextField *promptTextField;
 @property (nonatomic, unsafe_unretained) IBOutlet NSProgressIndicator *progressIndictor;
 
-- (void)dismissSheet;
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 
 @end

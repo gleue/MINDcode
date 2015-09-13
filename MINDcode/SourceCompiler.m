@@ -33,4 +33,7 @@
     return YES;
 }
 
+- (void) kill {
+}
+
 @end

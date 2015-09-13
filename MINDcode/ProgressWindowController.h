@@ -11,5 +11,8 @@
 @interface ProgressWindowController : NSWindowController
 
 - (void)presentAsSheetInWindow:(NSWindow *)parentWindow;
+- (void)dismissSheet;
+
+- (void)cancel;
 
 @end

@@ -25,11 +25,8 @@
 }
 
 - (void)presentAsSheetInWindow:(NSWindow *)parentWindow {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-	NSWindow * window = [self window];
-    NSLog(@"%@", window);
-    
-    [NSApp beginSheet: window
+
+    [NSApp beginSheet: self.window
        modalForWindow: parentWindow
         modalDelegate: self
        didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
@@ -37,16 +34,23 @@
 }
 
 - (void)dismissSheet {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-	NSWindow * window = [self window];
-    NSLog(@"%@", window);
     
-	[NSApp endSheet:window];
+	[NSApp endSheet:self.window];
 }
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
     [sheet orderOut:self];
+}
+
+- (void)cancel {
+
+    [NSApp endSheet:self.window returnCode:NSModalResponseCancel];
+}
+
+- (IBAction)cancel:(id)sender {
+    
+    [self cancel];
 }
 
 @end

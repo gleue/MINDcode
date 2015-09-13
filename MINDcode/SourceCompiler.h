@@ -19,6 +19,7 @@
 
 - (id) initWithSourceDocument:(SourceDocument *)sourceDocument;
 - (BOOL) compile;
+- (void) kill;
 
 @end
 

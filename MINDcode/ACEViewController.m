@@ -15,7 +15,6 @@
 @implementation ACEViewController
 
 -(void)loadView {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     
     [super loadView];
     
