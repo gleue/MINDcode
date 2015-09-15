@@ -868,14 +868,6 @@ wGw</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">a</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="534413331"/>
-					</object>
-					<int key="connectionID">199</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">nxtInfoDisconnectedView</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="2802373"/>
@@ -2367,7 +2359,7 @@ wGw</bytes>
 				<string key="284.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="285.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="286.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<array key="288.IBNSViewMetadataConstraints"/>
+				<reference key="288.IBNSViewMetadataConstraints" ref="0"/>
 				<boolean value="NO" key="288.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="288.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="289.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2377,7 +2369,7 @@ wGw</bytes>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="301.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="303.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<array key="304.IBNSViewMetadataConstraints"/>
+				<reference key="304.IBNSViewMetadataConstraints" ref="0"/>
 				<boolean value="NO" key="304.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="304.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="305.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
