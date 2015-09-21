@@ -28,7 +28,6 @@
 		1FE49CCF16A4B1740016E8F6 /* SourceCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CCE16A4B1740016E8F6 /* SourceCompiler.m */; };
 		1FE49CD216A4B2930016E8F6 /* NXCSourceCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CD116A4B2930016E8F6 /* NXCSourceCompiler.m */; };
 		1FE49CE416A4CB920016E8F6 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */; };
-		1FE49CE716A4CE170016E8F6 /* NXTDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CE616A4CE170016E8F6 /* NXTDeviceManager.m */; };
 		1FE49CFB16A4EC730016E8F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FE49CFD16A4EC730016E8F6 /* Localizable.strings */; };
 		1FE49D0116A4EEA90016E8F6 /* ProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49CFF16A4EEA90016E8F6 /* ProgressWindowController.m */; };
 		1FE49D0816A507140016E8F6 /* UploadProgressWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE49D0716A507140016E8F6 /* UploadProgressWindowController.m */; };
@@ -37,7 +36,7 @@
 		3D89D67C1BA3809900D2E49E /* NXTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89D67B1BA3808200D2E49E /* NXTKit.framework */; };
 		3D89D6A41BA385B100D2E49E /* nbc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D89D6911BA3858C00D2E49E /* nbc */; };
 		3D89D6A51BA385B100D2E49E /* nxtcom in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D89D6961BA3858C00D2E49E /* nxtcom */; };
-		3DC48A2E1BA5738C0039639F /* NXTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC48A2D1BA5738C0039639F /* NXTDevice.m */; };
+		3D9767481BB0741600125371 /* NXTUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9767471BB073D900125371 /* NXTUtils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +46,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = NXTKit;
+		};
+		3D9767461BB073D900125371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D9767411BB073D800125371 /* NXTUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D37F1901BB0705E00F85339;
+			remoteInfo = NXTUtils;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -111,14 +117,11 @@
 		1FE49CD016A4B2930016E8F6 /* NXCSourceCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXCSourceCompiler.h; sourceTree = "<group>"; };
 		1FE49CD116A4B2930016E8F6 /* NXCSourceCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXCSourceCompiler.m; sourceTree = "<group>"; };
 		1FE49CE316A4CB920016E8F6 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
-		1FE49CE516A4CE170016E8F6 /* NXTDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTDeviceManager.h; sourceTree = "<group>"; };
-		1FE49CE616A4CE170016E8F6 /* NXTDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTDeviceManager.m; sourceTree = "<group>"; };
 		1FE49CFC16A4EC730016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1FE49CFE16A4EEA90016E8F6 /* ProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWindowController.h; sourceTree = "<group>"; };
 		1FE49CFF16A4EEA90016E8F6 /* ProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWindowController.m; sourceTree = "<group>"; };
 		1FE49D0616A507140016E8F6 /* UploadProgressWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadProgressWindowController.h; sourceTree = "<group>"; };
 		1FE49D0716A507140016E8F6 /* UploadProgressWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadProgressWindowController.m; sourceTree = "<group>"; };
-		1FE49D1A16A5FF640016E8F6 /* NXT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXT.h; sourceTree = "<group>"; };
 		1FE49D1C16A60AA00016E8F6 /* Fantom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fantom.framework; sourceTree = "<group>"; };
 		1FE49D2016A60B2F0016E8F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProgressWindowController.xib; sourceTree = "<group>"; };
 		1FF20AB516A738450012F460 /* SourceCompiler+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SourceCompiler+Protected.h"; sourceTree = "<group>"; };
@@ -133,8 +136,7 @@
 		3D89D6961BA3858C00D2E49E /* nxtcom */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = nxtcom; sourceTree = "<group>"; };
 		3D89D6971BA3858C00D2E49E /* readme_nxtcom.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme_nxtcom.txt; sourceTree = "<group>"; };
 		3D89D6991BA3858C00D2E49E /* struct.nxc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = struct.nxc; sourceTree = "<group>"; };
-		3DC48A2C1BA5738C0039639F /* NXTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTDevice.h; sourceTree = "<group>"; };
-		3DC48A2D1BA5738C0039639F /* NXTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTDevice.m; sourceTree = "<group>"; };
+		3D9767411BB073D800125371 /* NXTUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NXTUtils.xcodeproj; path = NXTUtils/NXTUtils.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D89D67C1BA3809900D2E49E /* NXTKit.framework in Frameworks */,
+				3D9767481BB0741600125371 /* NXTUtils.framework in Frameworks */,
 				1FE49CE416A4CB920016E8F6 /* IOBluetoothUI.framework in Frameworks */,
 				1FE49C1916A3CD060016E8F6 /* Cocoa.framework in Frameworks */,
 				1FE49C5516A3CF260016E8F6 /* ACEView.framework in Frameworks */,
@@ -165,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */,
+				3D9767411BB073D800125371 /* NXTUtils.xcodeproj */,
 				3D89D68A1BA3858C00D2E49E /* bin */,
 				1F612D0616A91D680017C5E0 /* icon.iconset */,
 				1FE49C1E16A3CD060016E8F6 /* MINDcode */,
@@ -200,11 +204,6 @@
 				1FE49CCC16A4B1550016E8F6 /* Compilers */,
 				1FE49C8016A48CA40016E8F6 /* UI */,
 				1FE49C7F16A48C640016E8F6 /* Documents */,
-				1FE49D1A16A5FF640016E8F6 /* NXT.h */,
-				3DC48A2C1BA5738C0039639F /* NXTDevice.h */,
-				3DC48A2D1BA5738C0039639F /* NXTDevice.m */,
-				1FE49CE516A4CE170016E8F6 /* NXTDeviceManager.h */,
-				1FE49CE616A4CE170016E8F6 /* NXTDeviceManager.m */,
 				1FE49C6916A3D9E90016E8F6 /* MainWindowController.h */,
 				1FE49C6A16A3D9E90016E8F6 /* MainWindowController.m */,
 				1FE49C6016A3D2E10016E8F6 /* MainViewController.h */,
@@ -336,6 +335,14 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		3D9767421BB073D800125371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D9767471BB073D900125371 /* NXTUtils.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,6 +390,10 @@
 					ProductGroup = 3D89D6771BA3808100D2E49E /* Products */;
 					ProjectRef = 3D89D6761BA3808100D2E49E /* NXTKit.xcodeproj */;
 				},
+				{
+					ProductGroup = 3D9767421BB073D800125371 /* Products */;
+					ProjectRef = 3D9767411BB073D800125371 /* NXTUtils.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -397,6 +408,13 @@
 			fileType = wrapper.framework;
 			path = NXTKit.framework;
 			remoteRef = 3D89D67A1BA3808200D2E49E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D9767471BB073D900125371 /* NXTUtils.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NXTUtils.framework;
+			remoteRef = 3D9767461BB073D900125371 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -429,12 +447,10 @@
 				1FE49C2C16A3CD060016E8F6 /* NXCSourceDocument.m in Sources */,
 				1FE49C5B16A3D0F90016E8F6 /* ACEViewController.m in Sources */,
 				1FE49C6316A3D2E10016E8F6 /* MainViewController.m in Sources */,
-				3DC48A2E1BA5738C0039639F /* NXTDevice.m in Sources */,
 				1FE49C6C16A3D9E90016E8F6 /* MainWindowController.m in Sources */,
 				1FE49C7C16A489960016E8F6 /* SourceDocument.m in Sources */,
 				1FE49CCF16A4B1740016E8F6 /* SourceCompiler.m in Sources */,
 				1FE49CD216A4B2930016E8F6 /* NXCSourceCompiler.m in Sources */,
-				1FE49CE716A4CE170016E8F6 /* NXTDeviceManager.m in Sources */,
 				1FE49D0116A4EEA90016E8F6 /* ProgressWindowController.m in Sources */,
 				1FE49D0816A507140016E8F6 /* UploadProgressWindowController.m in Sources */,
 				1F70B9EB16A7C437009DCA94 /* CompileProgressWindowController.m in Sources */,
@@ -568,7 +584,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"/**",
+					"$(SRCROOT)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MINDcode/MINDcode-Prefix.pch";
@@ -584,7 +600,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"/**",
+					"$(SRCROOT)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MINDcode/MINDcode-Prefix.pch";

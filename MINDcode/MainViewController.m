@@ -8,10 +8,10 @@
 
 #import "MainViewController.h"
 #import "ACEViewController.h"
-#import "NXTDeviceManager.h"
 #import "UploadProgressWindowController.h"
 
 #import <NXTKit/NXTKit.h>
+#import <NXTUtils/NXTUtils.h>
 
 @interface MainViewController()
 

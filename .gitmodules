@@ -1,3 +1,6 @@
 [submodule "NXTKit"]
 	path = NXTKit
 	url = https://github.com/gleue/NXTKit.git
+[submodule "NXTUtils"]
+	path = NXTUtils
+	url = https://github.com/gleue/NXTUtils.git

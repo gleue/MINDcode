@@ -8,6 +8,8 @@
 
 #import "ProgressWindowController.h"
 
+#import <NXTKit/NXTKit.h>
+
 @protocol UploadProgressWindowControllerDelegate;
 
 
